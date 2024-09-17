@@ -1,0 +1,34 @@
+Method                  ArrayList Runtime h      LinkedList Runtime
+
+- get(index)            O(1) constant time      O(n) linear time
+
+- rotate(int n)         O(n^2) quadratic time   O(n) linear time
+
+- merge(List<T> other)  O(n) linear time        O(n) linear time
+
+- reverse()             O(n) linear time        O(n) linear time
+
+
+Explanations:
+- get(index): The ArrayList implementation does not including any iteration or anything,
+        it does not depend on any variables, it just immediately returns the index
+        no matter what the index is, therefor O(1) constant time. Whereas the LinkedList
+        implementation has to iterate through every node until it reaches index, so the
+        method depends on what index is, so O(n) linear time.
+
+- rotate(int n): The ArrayList implementation uses nested for loops, resulting in O(n * n) which
+        would be O(n^2) quadratic time. The method also calls checkSorted() which has a O(n) time
+        complexity, so the final time complexity would be O(n * n) + O(n) but that again simplifies
+        to just O(n^2). Whereas the LinkedList implementation does not utilize nested for loops, and
+        only uses one for loop which depends on the input size of n, so it is O(n) linear time.
+
+- merge(List<T> other): Both of the ArrayList and LinkedList implementations are O(n) linear time when
+        ignoring the two sort calls in the beginning of the method. This is because both methods then
+        only depend on the size of the merged list. They both traverse through the two lists and
+        compare the elements. This depends on the length of the merged list (size of both lists combined)
+        therefore the time complexity of both implementations are O(n) linear time.
+
+- reverse(): Both of the ArrayList and LinkedList implementations are O(n) linear time. This is due to
+        both using one form of iteration (not nesting). The ArrayList reverse depends on the size
+        of the array. The LinkedList depends on also the size, or more specifically how many nodes
+        are in the LinkedList, as it traverses through every node from the method's while loop.
